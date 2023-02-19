@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Quizz Portal
+    </title>
+    <h1>
+        Avant de commencer le quizz,<br>
+        Veuillez rentrer quelques informations :
+    </h1>
+</head>
+<body>
+    <form name="infosPerso" action="">
+        <fieldset>
+            <legend>Informations personnelles</legend>
+            <br>
+            <label for="nom">Nom :<br></label>
+            <input type="text" id="nom" name="nom" required
+            title="entrez votre nom" placeholder="Entrez votre nom">
+            
+            <br>
+            <br>
+
+            <label for="prenom">Prénom :<br></label>
+            <input type="text" id="prenom" name="prenom" required
+            title="entrez votre prénom" placeholder="Entrez votre prénom">
+            
+            <br>
+            <br>
+
+            <label for="ddn">Date de naissance :<br></label>
+            <input type="date" id="ddn" name="datedenaissance" required
+                min="1950-01-01" max="2022-31-12" title="Vous devez avoir 16 ans ou plus">
+
+            <br>
+            <br>
+
+            <label for="mail">Adresse Email :<br></label>
+            <input type="mail" id="mail" name="mail" required
+            title="entrez votre adresse mail" placeholder="Entrez votre adresse email">
+            
+            <br>
+            <br>
+
+            <label for="tel">Numéro de téléphone :<br></label>
+            <input type="tel" id="tel" name="tel" required pattern="^9[0-9]{7}"
+            title="entrez votre numéro de téléphone (sans espaces)" placeholder="numéro sans espaces">
+            
+            <br>
+            <br>
+
+            <label for="url">URL de votre site :<br></label>
+            <input type="url" id="url" name="url"  
+            title="entrez votre URL" value="https://">
+            
+            <br>
+            <br>
+            <input type="button" value="Envoyer" onclick="formulaireComforme()">
+            <!-- si age correct, envoyer vers quizz -->
+        </fieldset>
+    </form>
+
+</body>
+</html>
+
+<!-- ----------------------------------------------------JS---------------------------------------------------- -->
+
+<script>
+    function verifAge(){
+        // on récupère la date de naissance
+        var DDN = document.getElementById('ddn').value;
+        // on la convertit en Date
+        var DateDDN = new Date(DDN);
+
+        // on calcule la différence entre la date rentrée et la date actuelle
+        var diff_date = Date.now() - DateDDN.getTime();
+        // on la convertit en Date
+        var Date_diff_date = new Date(diff_date); 
+    
+        var age = Math.abs(Date_diff_date.getUTCFullYear() - 1970);
+
+        if(age > 16){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+            
+    function champsRemplis(){
+        let champNom = document.forms["infosPerso"]["nom"].value;
+        if (champNom == "") {
+            alert("Vous n'avez pas renseigné votre nom");
+            return false;
+        }
+
+        let champPrenom = document.forms["infosPerso"]["prenom"].value;
+        if (champPrenom == "") {
+            alert("Vous n'avez pas renseigné votre prénom");
+            return false;
+        }
+
+        let champDDN = document.forms["infosPerso"]["datedenaissance"].value;
+        if (champDDN == "") {
+            alert("Vous n'avez pas renseigné votre date de naissance");
+            return false;
+        }
+
+        let champMail = document.forms["infosPerso"]["mail"].value;
+        if (champMail == "") {
+            alert("Vous n'avez pas renseigné votre mail");
+            return false;
+        }
+
+        let champTel = document.forms["infosPerso"]["tel"].value;
+        if (champTel.length > 0 && champTel.length < 10) {
+            alert("Votre numéro de téléphone n'est pas correct");
+            return false;
+        }
+        if (champTel == "") {
+            alert("Vous n'avez pas renseigné votre numéro de téléphone");
+            return false;
+        }
+        
+        return true;
+    }
+
+    function formulaireComforme(){
+        if(!verifAge()){
+            window.alert("Vous êtes trop jeune pour répondre au quizz");
+        }
+
+        if(!champsRemplis()){}
+
+        else if(verifAge() && champsRemplis()){
+            window.location.href="TP_Quizz_Quizz.html";
+        }
+    }
+    
+</script>
+
+<!-- ----------------------------------------------------CSS---------------------------------------------------- -->
+
+<style>
+    body {
+        background-image: url("images/fondQuizz.jpg");
+        background-size: cover;
+        text-align: center;
+        color: rgb(179, 178, 178);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+    label, legend{
+        font-size: x-large;
+    }
+
+    h1{
+        text-decoration: underline;
+    }
+
+    input{
+        font-size: large;
+    }
+</style>

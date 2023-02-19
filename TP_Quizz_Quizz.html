@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz Portal</title>
+    <h1>Bienvenue sur ce quizz Portal</h1>
+</head>
+<body>
+    <form name="quizz" action="">
+        <fieldset>
+            <legend id="leg1">Question 1</legend>
+            <label for="quest1">Qui a fondé Aperture Laboratories ?<br><br></label>
+            <select name="quest1" id="quest1">
+                <option value="gordon">Gordon Freeman</option>
+                <option value="caroline">Caroline</option>
+                <option value="wheatley">Wheatley</option>
+                <option value="cave">Cave Johnson</option>
+                <option value="james">James Aperture</option>
+                <option value="steve">Steve Jobs</option>
+            </select>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg2">Question 2</legend>
+            <label for="quest2">Comment s'appelle le robot qui essaye de vous tuer dans Portal 1 ?<br><br></label>
+            <select name="quest2" id="quest2" multiple size="5">
+                <option value="wheatley">Wheatley</option>
+                <option value="glados">GLaDOS</option>
+                <option value="r2d2">R2D2</option>
+                <option value="marvin">Marvin</option>
+                <option value="ede">ED-E</option>
+            </select>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg3">Question 3</legend>
+            <label for="quest3">Ecrivez le mot manquant :</label>
+            <p>"The <input type="text" name="cake" id="cake"> is a lie"</p>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg4">Question 4</legend>
+            <label for="quest4">Combien de salles de tests sont dans Portal 1 ?<br><br></label>
+            <input type="range" value="1" max="25" min="1" step="1" name="quest4" onchange="rangevalue.value=value">
+            <output id="rangevalue">1</output>
+            <p></p>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg5">Question 5</legend>
+            <label for="quest5">De quelle couleur est le portail d'entrée ? <br><br></label>
+            <div class="couleurs" id="quest5">
+                <input type="radio" name="portail" id="p1" value="1" checked>Orange
+                <input type="radio" name="portail" id="p2" value="2">Rouge
+                <input type="radio" name="portail" id="p3" value="3">Jaune
+                <input type="radio" name="portail" id="p4" value="4">Bleu
+                <input type="radio" name="portail" id="p5" value="5">Vert
+            </div>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg6">Question 6</legend>
+            <label for="quest6">Combien de coeurs de moralités sont présents à la fin de Portal 1 ? <br><br></label>
+            <input type="number" name="quest6" id="quest6"><br>
+            <!-- 4 -->
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg7">Question 7</legend>
+            <label for="quest7">Avec l'ADN de quel insecte Aperture a-t-il mixé <br> l'ADN de ses sujets de tests dans les années 50 ? <br><br></label>
+            <div class="insectes">
+                <input type="checkbox" name="insecte" id="i1" value="1" checked>Papillon 
+                <input type="checkbox" name="insecte" id="i2" value="2">Coccinelle 
+                <input type="checkbox" name="insecte" id="i3" value="3">Cafard 
+                <input type="checkbox" name="insecte" id="i4" value="4">Mante religieuse 
+            </div>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg8">Question 8</legend>
+            <label for="quest8">Quelle nourriture possède une place très importante dans Portal 2 ?<br><br></label>
+            <select name="quest8" id="quest8" multiple size="5">
+                <option value="carotte">Carotte</option>
+                <option value="poireau">Poireau</option>
+                <option value="tomate">Tomate</option>
+                <option value="patate">Patate</option>
+                <option value="rutabaga">Rutabaga</option>
+            </select><br>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg9">Question 9</legend>
+            <label for="quest9">Laquelle de ces manières de mourrir ne figure pas dans les jeux ? <br><br></label>
+            <div class="morts">
+                <input type="radio" name="mort" id="m1" value="1" checked>Tourelles
+                <input type="radio" name="mort" id="m2" value="2">Bains d'acide
+                <input type="radio" name="mort" id="m3" value="3">Neurotoxines
+                <input type="radio" name="mort" id="m4" value="4">Chutes dans le vide
+                <input type="radio" name="mort" id="m5" value="5">Des aliens de la dimension Xen
+                <input type="radio" name="mort" id="m6" value="6">Ecrasé par une plaque avec des piques
+            </div><br>
+        </fieldset><br>
+
+        <fieldset>
+            <legend id="leg10">Question 10</legend>
+            <label for="quest1">Comment s'appelle la protagoniste ?<br><br></label>
+            <select name="quest10" id="quest10">
+                <option value="gordon">Gordon Freeman</option>
+                <option value="wheatley">Wheatley</option>
+                <option value="mel">Mel</option>
+                <option value="chell">Chell</option>
+                <option value="alex">Alex</option>
+                <option value="steve">Steve</option>
+            </select>
+        </fieldset><br>
+        <input type="button" value="Envoyer" id="envoyer" onclick="confirmer()">
+    </form>
+</body>
+</html>
+
+<!-- ----------------------------------------------------CSS---------------------------------------------------- -->
+<style>
+    body {
+        background-image: url("images/fondQuizz.jpg");
+        background-size: cover;
+        text-align: center;
+        color: rgb(179, 178, 178);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+    label, legend{
+        font-size: x-large;
+    }
+    
+    p{
+        font-style: italic;
+    }
+
+    h1, label{
+        text-decoration: underline;
+    }
+
+    input, option, select{
+        font-size: large;
+    }
+
+    input[type="range"] {
+    position: relative;
+    margin-left: 1em;
+    }
+    input[type="range"]:after,
+    input[type="range"]:before {
+        position: absolute;
+        top: 1em;
+        color: #aaa;
+    }
+    input[type="range"]:before {
+        left:0em;
+        content: attr(min);
+    }
+    input[type="range"]:after {
+        right: 0em;
+        content: attr(max);
+    }
+
+    .pas_bon{
+        background-color: rgb(253, 78, 78);
+        color: black;
+    }
+
+    .bon{
+        background-color: rgb(67, 206, 67);
+        color: black;
+    }
+</style>
+
+<!-- ----------------------------------------------------Javascript---------------------------------------------------- -->
+
+<script>
+    function confirmer(){
+        if(confirm("Êtes vous sûr d'avoir fini ?")){
+            deactiverInputs();
+            
+            if(nbPoints() < 5){
+                alert("Dommage\nVous avez obtenu " + nbPoints() + " points sur 10");
+            }
+            else{
+                alert("Bravo !\nVous avez obtenu " + nbPoints() + " points sur 10");
+            }
+        }
+    }
+
+    function deactiverInputs(){
+        document.getElementById("quest1").disabled = true;
+        document.getElementById("quest2").disabled = true;
+        document.getElementById("cake").disabled = true;
+   
+        document.querySelector('input[name="quest4"]').disabled = true;
+
+        document.getElementById("p1").disabled = true;
+        document.getElementById("p2").disabled = true;
+        document.getElementById("p3").disabled = true;
+        document.getElementById("p4").disabled = true;
+        document.getElementById("p5").disabled = true;
+
+        document.getElementById("quest6").disabled = true;
+
+        document.getElementById("i1").disabled = true;
+        document.getElementById("i2").disabled = true;
+        document.getElementById("i3").disabled = true;
+        document.getElementById("i4").disabled = true;
+
+        document.getElementById("quest8").disabled = true;
+
+        document.getElementById("m1").disabled = true;
+        document.getElementById("m2").disabled = true;
+        document.getElementById("m3").disabled = true;
+        document.getElementById("m4").disabled = true;
+        document.getElementById("m5").disabled = true;
+        document.getElementById("m6").disabled = true;
+
+        document.getElementById("quest10").disabled = true;
+        document.getElementById("envoyer").disabled = true;
+    }
+
+    function nbPoints(){
+        var points = 0;
+
+        if(document.getElementById("quest1").value == "cave"){
+            points += 1;
+            document.getElementById("leg1").className = "bon";
+        }
+        else{
+            document.getElementById("leg1").className = "pas_bon";
+        }
+
+
+        if(document.getElementById("quest2").value == "glados"){
+            points += 1;
+            document.getElementById("leg2").className = "bon";
+        }
+        else{
+            document.getElementById("leg2").className = "pas_bon";
+        }
+
+
+        if(document.getElementById("cake").value == "cake"){
+            points += 1;
+            document.getElementById("leg3").className ="bon";
+        }
+        else{
+            document.getElementById("leg4").className ="pas_bon";
+        }
+
+
+        if(document.getElementById("rangevalue").value == 19){
+            points += 1;
+            document.getElementById("leg4").className ="bon";
+        }
+        else{
+            document.getElementById("leg4").className ="pas_bon";
+        }
+
+
+        if(document.querySelector('input[name="portail"]:checked').value == 4){
+            points += 1;
+            document.getElementById("leg5").className ="bon";
+        }
+        else{
+            document.getElementById("leg5").className ="pas_bon";
+        }
+
+
+        if(document.getElementById("quest6").value == 4){
+            points += 1;
+            document.getElementById("leg6").className ="bon";
+        }
+        else{
+            document.getElementById("leg6").className ="pas_bon";
+        }
+
+
+        if(document.querySelector('input[name="insecte"]:checked').value == 4){
+            points += 1;
+            document.getElementById("leg7").className ="bon";
+        }
+        else{
+            document.getElementById("leg7").className ="pas_bon";
+        }
+
+
+        if(document.getElementById("quest8").value == "patate"){
+            points += 1;
+            document.getElementById("leg8").className ="bon";
+        }
+        else{
+            document.getElementById("leg8").className ="pas_bon";
+        }
+
+
+        if(document.querySelector('input[name="mort"]:checked').value == 5){
+            points += 1;
+            document.getElementById("leg9").className ="bon";
+        }
+        else{
+            document.getElementById("leg9").className ="pas_bon";
+        }
+
+
+        if(document.getElementById("quest10").value == "chell"){
+            points += 1;
+            document.getElementById("leg10").className ="bon";
+        }
+        else{
+            document.getElementById("leg10").className ="pas_bon";
+        }
+
+        return points;
+    }
+</script>
