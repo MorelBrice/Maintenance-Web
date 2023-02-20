@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>
-        Quizz Portal
+        Quizz
     </title>
     <h1>
-        Avant de commencer le quizz,<br>
-        Veuillez rentrer quelques informations :
+        Connexion
     </h1>
 </head>
 <body>
@@ -46,13 +45,6 @@
             <label for="tel">Numéro de téléphone :<br></label>
             <input type="tel" id="tel" name="tel" required pattern="^9[0-9]{7}"
             title="entrez votre numéro de téléphone (sans espaces)" placeholder="numéro sans espaces">
-            
-            <br>
-            <br>
-
-            <label for="url">URL de votre site :<br></label>
-            <input type="url" id="url" name="url"  
-            title="entrez votre URL" value="https://">
             
             <br>
             <br>
@@ -134,7 +126,7 @@
         if(!champsRemplis()){}
 
         else if(verifAge() && champsRemplis()){
-            window.location.href="TP_Quizz_Quizz.html";
+            window.location.href="Quizz_Menu_principal.html";
         }
     }
     
@@ -144,10 +136,11 @@
 
 <style>
     body {
-        background-image: url("images/fondQuizz.jpg");
+        /* background-image: url("images/fondQuizz.jpg"); */
+        background-color: rgb(44,47,51);
         background-size: cover;
         text-align: center;
-        color: rgb(179, 178, 178);
+        color: rgb(227, 227, 227);
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
