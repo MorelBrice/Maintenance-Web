@@ -11,3 +11,4 @@ foreach ($_FILES['file']['name'] as $key=>$val) {
  
 echo "File(s) uploaded successfully.";
 die;
+?>

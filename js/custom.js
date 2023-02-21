@@ -18,7 +18,7 @@ function ajax_file_upload(files_obj) {
             form_data.append('file[]', files_obj[i]);
         }
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "../ajax.php", true);
+        xhttp.open("POST", "js/ajax.php", true);
         xhttp.onload = function(event) {
             if (xhttp.status == 200) {
                 alert(this.responseText);
